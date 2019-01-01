@@ -1,5 +1,4 @@
 #!/bin/python
-# Python 2.7
 
 #import time
 from time import localtime, strftime, mktime
@@ -8,7 +7,7 @@ start_time = localtime()
 print("Timer start at %s" % strftime("%X", start_time))
 
 # Wait for user input
-raw_input("Please press Enter to continue...")
+input("Please press Enter to continue...")
 
 stop_time = localtime()
 difference = mktime(stop_time) - mktime(start_time)

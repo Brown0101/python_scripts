@@ -8,17 +8,16 @@ class Calculator(object):
         """ Defining our constructor even though we are not using it yet """
         pass
 
-
     def perform_operation(self, operand, value1, value2):
         print("Operand is: " + operand)
         if operand == "1":
             self.add(value1, value2)
         elif operand == "2":
-            pass
+            self.subtract(value1, value2)
         elif operand == "3":
-            pass
+            self.multiply(value1, value2)
         elif operand == "4":
-            pass
+            self.divide(value1, value2)
         elif operand == "5":
             pass
         elif operand == "6":
@@ -32,22 +31,24 @@ class Calculator(object):
         elif operand == "10":
             pass
 
-
     def add(self, value1, value2):
         result = str(value1 + value2)
         print(f"\nThe result is: {result}\n")
 
-
     def subtract(self, value1, value2):
-        pass
-
+        result = str(value1 - value2)
+        print(f"\nThe result is: {result}\n")
 
     def multiply(self, value1, value2):
-        pass
-
+        result = str(value1 * value2)
+        print(f"\nThe result is: {result}\n")
 
     def divide(self, value1, value2):
-        pass
+        try:
+            result = str(value1 / value2)
+            print(f"\nThe result is: {result}\n")
+        except ZeroDivisionError as error:
+            print("You can not divide by Zero.")
 
 
     def Modulo(self, value1, value2):

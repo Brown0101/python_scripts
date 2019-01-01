@@ -48,12 +48,14 @@ def main():
             continue
 
         while True:
-            if cont.upper() != "Y" or cont.upper() != "N":
+            if cont.upper() != "Y" and cont.upper() != "N":
                 cont = input("Do you want to perform another calculation (Y/N): ")
             else:
+                print("Inner BREAK")
                 break
 
-        if cont.upper() != "N":
+        if cont.upper() == "N":
+            print("OUTER BREAK")
             break
 
 

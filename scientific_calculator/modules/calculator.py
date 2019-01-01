@@ -9,7 +9,7 @@ class Calculator(object):
         pass
 
     def perform_operation(self, operand, value1, value2):
-        print("Operand is: " + operand)
+        """ Determines the correct math operation to perform """
         if operand == "1":
             self.add(value1, value2)
         elif operand == "2":
@@ -19,17 +19,19 @@ class Calculator(object):
         elif operand == "4":
             self.divide(value1, value2)
         elif operand == "5":
-            pass
+            self.modulo(value1, value2)
         elif operand == "6":
-            pass
+            self.raising_to_a_power(value1, value2)
         elif operand == "7":
-            pass
+            self.square_root(value1)
         elif operand == "8":
-            pass
+            self.logarithm(value1)
         elif operand == "9":
-            pass
+            self.sine(value1)
         elif operand == "10":
-            pass
+            self.cosine(value1)
+        elif operand == "11":
+            self.tangent(value1)
 
     def add(self, value1, value2):
         result = str(value1 + value2)
@@ -50,30 +52,33 @@ class Calculator(object):
         except ZeroDivisionError as error:
             print("You can not divide by Zero.")
 
-
-    def Modulo(self, value1, value2):
-        pass
-
+    def modulo(self, value1, value2):
+        result = str(value1 % value2)
+        print(f"\nThe result is: {result}\n")
 
     def raising_to_a_power(self, value1, value2):
-        pass
+        result = str(math.pow(value1, value2))
+        print(f"\nThe result is: {result}\n")
 
+    def square_root(self, value1):
+        result = str(math.sqrt(value1))
+        print(f"\nThe result is: {result}\n")
 
-    def logarithm(self, value1, value2):
-        pass
+    def logarithm(self, value1):
+        result = str(math.log(value1, 2))
+        print(f"\nThe result is: {result}\n")
 
+    def sine(self, value1):
+        result = str(math.sin((math.radians(value1))))
+        print(f"\nThe result is: {result}\n")
 
-    def sine(self, value1, value2):
-        pass
+    def cosine(self, value1):
+        result = str(math.cos((math.radians(value1))))
+        print(f"\nThe result is: {result}\n")
 
-
-    def cosine(self, value1, value2):
-        pass
-
-
-    def tangent(self, value1, value2):
-        pass
-
+    def tangent(self, value1):
+        result = str(math.tan((math.radians(value1))))
+        print(f"\nThe result is: {result}\n")
 
     def print_menu(self):
         """ Prints our menu to the user """
@@ -88,10 +93,11 @@ class Calculator(object):
             4.  Division
             5.  Modulo
             6.  Raising to a power
-            7.  Logarithm
-            8.  Sine
-            9.  Cosine
-            10. Tangent
+            7.  Square Root
+            8.  Logarithm
+            9.  Sine
+            10. Cosine
+            11. Tangent
             """
         )
 

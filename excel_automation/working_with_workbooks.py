@@ -31,3 +31,20 @@ print(sheet.max_column)  # Returns the number of columns used in the sheet.
 # Return all rows as tuples
 for i in sheet.values:
     print(i)
+
+# Two ways to get the value of a cell
+sheet['B7'].value
+sheet.cell(row=6, column=2).value
+
+# Reference a cell within a sheet
+cell = sheet['B9']
+cell.row
+cell.column
+cell.coordinate  # returns B9
+cell.data_type  # returns 's' for string
+cell.encoding  # In this cass return utf-8 for default
+cell.value = 'Frank'
+workbook.save()
+
+# Get parent worksheet of cell
+cell.parent
